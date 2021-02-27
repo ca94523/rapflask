@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Reference Id</th>
+            <th scope="col">Requested Tenor</th>
+            <th scope="col">Occupation</th>
+            <th scope="col">Scoring result</th>
+            <th scope="col">Decision</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for res in result %}
+        <tr>
+            <td>{{ res.name }}</td>
+            <td>{{ res.reference_id }}</td>
+            <td>{{ res.req_tnr }}</td>
+            <td>{{ res.occupation }}</td>
+            <td>{{ res.score }}</td>
+            <td>{{ res.result }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
