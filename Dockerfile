@@ -12,12 +12,11 @@ RUN /opt/app-root/r_scripts/install_rpackage.sh
 COPY ./app /opt/app-root/app
 RUN chgrp -R 0 /opt/app-root/app && chmod -R g+rwX /opt/app-root/app
 COPY ./gunicorn_conf.py /opt/app-root/gunicorn_conf.py
-COPY ./entrypoint.sh /opt/app-root/entrypoint.sh
-RUN chmod +x /opt/app-root/entrypoint.sh
 COPY ./start.sh /opt/app-root/start.sh
 RUN chmod +x /opt/app-root/start.sh
 COPY ./config.py /opt/app-root/config.py
+RUN chown -R 1001:1001 /opt/app-root
+USER 1001
 EXPOSE 8000
-#ENTRYPOINT ["/opt/app-root/entrypoint.sh"]
-#CMD ["/opt/app-root/start.sh"]
-ENTRYPOINT /bin/bash
+CMD ["/opt/app-root/start.sh"]
+#ENTRYPOINT /bin/bash

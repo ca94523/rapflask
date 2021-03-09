@@ -23,4 +23,4 @@ ln -s ${R_LIBS_SITE}/littler/examples/install2.r /usr/local/bin/install2.r
 ln -s ${R_LIBS_SITE}/littler/examples/installGithub.r /usr/local/bin/installGithub.r
 ln -s ${R_LIBS_SITE}/littler/bin/r /usr/local/bin/r
 
-export LD_LIBRARY_PATH="/opt/R/4.0.4/lib/R/library:$LD_LIBRARY_PATH"
+#export LD_LIBRARY_PATH="/opt/R/4.0.4/lib/R/lib:$LD_LIBRARY_PATH" #needed by rpy2
