@@ -11,6 +11,7 @@ ln -s /opt/R/${R_VERSION}/bin/Rscript /usr/local/bin/Rscript
 
 R_HOME=${R_HOME:-/usr/local/bin/R}
 
+
 Rscript -e "install.packages(c('littler', 'docopt'), repos='https://packagemanager.rstudio.com/all/latest')"
 #saved to /opt/R/4.0.4/lib/R/library
 
@@ -22,3 +23,4 @@ ln -s ${R_LIBS_SITE}/littler/examples/install2.r /usr/local/bin/install2.r
 ln -s ${R_LIBS_SITE}/littler/examples/installGithub.r /usr/local/bin/installGithub.r
 ln -s ${R_LIBS_SITE}/littler/bin/r /usr/local/bin/r
 
+export LD_LIBRARY_PATH="/opt/R/4.0.4/lib/R/library:$LD_LIBRARY_PATH"

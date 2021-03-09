@@ -6,7 +6,7 @@ from app.models.pdmodeldb.cdmodel import get_cd
 from app.models.pdmodeldb.ebwmodel import get_ebw
 from app.models.pdmodeldb.ddmodel import get_dd
 # TODO coment both R_HOME before deployment
-# R_HOME='/usr/lib/R'
+#R_HOME='/usr/local/bin/R'
 # os.environ['R_HOME'] = 'C:/Users/david.sirait/Documents/R/R-4.0.3'
 filepath = os.path.dirname(__file__)
 
